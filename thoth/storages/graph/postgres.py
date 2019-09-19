@@ -1719,7 +1719,7 @@ class GraphDatabase(SQLBase):
                 package_analyzer_run, _ = PackageAnalyzerRun.get_or_create(
                     self._session,
                     package_analyzer_name=document["metadata"]["analyzer"],
-                    package_analyzer_version=document["metadata"]["analyzer_version"],
+                    package_analyzer_version=str(document["metadata"]["analyzer_version"]),
                     package_analysis_document_id=package_analysis_document_id,
                     datetime=document["metadata"]["datetime"],
                     debug=document["metadata"]["arguments"]["thoth-package-analyzer"]["verbose"],
